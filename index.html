@@ -80,7 +80,7 @@
     /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 96px 24px 80px;
+      padding: 96px 24px 40px;
       background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
     }
 
@@ -108,7 +108,7 @@
       font-size: clamp(17px, 2.5vw, 21px);
       color: var(--muted);
       max-width: 520px;
-      margin: 0 auto 40px;
+      margin: 0 auto 20px;
       line-height: 1.6;
     }
 
@@ -148,7 +148,7 @@
     .btn-secondary:hover { border-color: var(--blue); transform: translateY(-1px); }
 
     .hero-note {
-      margin-top: 16px;
+      margin-top: 12px;
       font-size: 13px;
       color: var(--muted);
     }
@@ -441,7 +441,82 @@
       gap: 20px;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ── HERO PRIVACY CALLOUT ── */
+    .hero-privacy-callout {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--blue-light);
+      border: 1.5px solid var(--blue-mid);
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: var(--blue-dark);
+      line-height: 1.55;
+      max-width: 460px;
+      text-align: left;
+    }
+    .hero-privacy-callout strong { color: var(--blue-dark); }
+    .hero-privacy-callout .lock-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PRIVACY PROMISE BANNER ── */
+    .privacy-promise {
+      text-align: center;
+      padding: 60px 24px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .privacy-promise-headline {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .privacy-promise-body {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 24px;
+      line-height: 1.7;
+    }
+
+    .privacy-promise-chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .privacy-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--blue-mid);
+    }
+
+    /* ── STEP PRIVACY NOTE ── */
+    .step-privacy-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--blue-dark);
+      opacity: 0.75;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+        /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 0 16px; }
       .hero { padding: 64px 16px 56px; }
@@ -466,6 +541,10 @@
   <img src="images/icon.png" alt="Storage Trimmer" class="hero-icon" />
   <h1>Free up space.<br /><span>Keep your best shots.</span></h1>
   <p>Storage Trimmer scans your Mac Photos library, finds your duplicates and near-duplicates, and helps you delete the ones worth losing.</p>
+  <div class="hero-privacy-callout">
+    <span class="lock-icon">🔒</span>
+    <span><strong>Your photos never leave your Mac.</strong> No servers. No accounts. We have zero access to your data — ever.</span>
+  </div>
   <div class="hero-actions">
     <a href="#download" class="btn-primary">
       <!-- Apple logo SVG -->
@@ -502,6 +581,28 @@
   </div>
 </div>
 
+<!-- PRIVACY PROMISE -->
+<div class="privacy-promise">
+  <div class="container">
+    <h2 class="privacy-promise-headline">"We will never see your photos. Not now, not ever."</h2>
+    <p class="privacy-promise-body">Storage Trimmer makes zero network requests. There are no servers, no accounts, and no way for us — or anyone — to access your library. Everything runs on your Mac using Apple's own frameworks, and it stays there.</p>
+    <div class="privacy-promise-chips">
+      <span class="privacy-chip">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        No internet required
+      </span>
+      <span class="privacy-chip">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        No account, ever
+      </span>
+      <span class="privacy-chip">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Apple frameworks only
+      </span>
+    </div>
+  </div>
+</div>
+
 <!-- HOW IT WORKS -->
 <section class="how" id="how-it-works">
   <div class="container">
@@ -518,11 +619,13 @@
         <div class="step-num">2</div>
         <h3>Review the clusters</h3>
         <p>Similar photos are grouped together. The sharpest, highest-quality version is automatically suggested as the keeper, and you can override at any time.</p>
+        <p class="step-privacy-note">🔒 All grouping and scoring runs locally — no image data is ever extracted or sent anywhere.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h3>Delete and free up space</h3>
         <p>Select the duplicates you want to remove and delete them in one tap. Photos keeps deleted items in Recently Deleted for 30 days, just in case.</p>
+        <p class="step-privacy-note">🔒 Deletions go through Apple Photos. We never have direct access to your files.</p>
       </div>
     </div>
   </div>
@@ -610,7 +713,7 @@
       <div class="pricing-card">
         <h3>30-day Free Trial</h3>
         <div class="pricing-price">£0</div>
-        <p class="pricing-desc">Scan up to the last 90 days.</p>
+<p class="pricing-desc">Scan up to the last 90 days.<br><em>On-device only. No sign-up, no data collection.</em></p>
         <ul class="pricing-features">
           <li>Scan last 90 days of photos &amp; videos</li>
           <li>Smart keeper suggestions</li>
@@ -645,7 +748,7 @@
         Download Free on the Mac App Store
       </a>
     </div>
-    <p class="hero-note" style="margin-top:14px;">macOS · Free to download · No account needed</p>
+    <p class="hero-note" style="margin-top:14px;">macOS · Free to download · No account needed · Your photos never leave your Mac</p>
   </div>
 </section>
 
