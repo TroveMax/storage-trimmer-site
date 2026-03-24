@@ -270,53 +270,6 @@
     /* ── HOW IT WORKS ── */
     .how { background: var(--blue-light); }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 0;
-      margin-top: 64px;
-    }
-
-    .step {
-      padding: 32px 36px 32px 0;
-      border-top: 1.5px solid var(--border);
-    }
-    .step:not(:last-child) {
-      padding-right: 36px;
-    }
-
-    .step-num {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--muted);
-      opacity: 0.5;
-      margin-bottom: 20px;
-    }
-
-    .step h3 {
-      font-size: 18px;
-      font-weight: 650;
-      margin-bottom: 12px;
-      letter-spacing: -0.2px;
-    }
-
-    .step p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .step-privacy-note {
-      margin-top: 14px;
-      font-size: 12px;
-      color: var(--blue);
-      opacity: 0.8;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
     /* ── FEATURES ── */
     .features-grid {
       display: grid;
@@ -543,6 +496,91 @@
       gap: 20px;
     }
 
+
+    /* ── HERO SCREENSHOT ── */
+    .hero-screenshot {
+      margin: 56px auto 0;
+      max-width: 960px;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+    }
+    .hero-screenshot-bar {
+      background: #1A1C2E;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 7px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+    .hero-screenshot-bar span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .hero-screenshot-bar .dot-red    { background: #FF5F57; }
+    .hero-screenshot-bar .dot-yellow { background: #FFBD2E; }
+    .hero-screenshot-bar .dot-green  { background: #28C840; }
+    .hero-screenshot img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── STEP WITH SCREENSHOT ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      margin-top: 64px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      border-top: none;
+      padding: 0;
+    }
+    .step.reverse .step-text  { order: 2; }
+    .step.reverse .step-screenshot { order: 1; }
+    .step-text .step-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .step-text h3 {
+      font-size: 22px;
+      font-weight: 650;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+    .step-text p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .step-screenshot {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.1);
+    }
+    .step-screenshot img {
+      width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .step { grid-template-columns: 1fr; gap: 28px; }
+      .step.reverse .step-text  { order: 2; }
+      .step.reverse .step-screenshot { order: 1; }
+    }
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .privacy-promise-inner { grid-template-columns: 1fr; gap: 32px; }
@@ -627,21 +665,36 @@
     <p class="section-sub">Storage Trimmer does the hard work so you don&rsquo;t have to scroll through thousands of near-identical shots.</p>
     <div class="steps">
       <div class="step">
-        <div class="step-num">01</div>
-        <h3>Scan your library</h3>
-        <p>Choose a date range or scan your entire library. Storage Trimmer analyses every photo and video using Apple&rsquo;s on-device ML &mdash; no uploads, ever.</p>
+        <div class="step-text">
+          <div class="step-num">01</div>
+          <h3>Scan your library</h3>
+          <p>Choose a date range or scan your entire library. Storage Trimmer analyses every photo and video using Apple&rsquo;s on-device ML &mdash; no uploads, ever.</p>
+        </div>
+        <div class="step-screenshot">
+          <img src="images/screenshot-home.png" alt="Storage Trimmer home screen — scan your library" />
+        </div>
+      </div>
+      <div class="step reverse">
+        <div class="step-text">
+          <div class="step-num">02</div>
+          <h3>Review the clusters</h3>
+          <p>Similar photos are grouped together. The sharpest, highest-quality version is automatically suggested as the keeper, and you can override at any time.</p>
+          <p class="step-privacy-note" style="margin-top:14px;font-size:12px;color:var(--blue);opacity:0.8;">All grouping and scoring runs locally &mdash; no image data is ever sent anywhere.</p>
+        </div>
+        <div class="step-screenshot">
+          <img src="images/screenshot-review.png" alt="Storage Trimmer — reviewing duplicate photo clusters" />
+        </div>
       </div>
       <div class="step">
-        <div class="step-num">02</div>
-        <h3>Review the clusters</h3>
-        <p>Similar photos are grouped together. The sharpest, highest-quality version is automatically suggested as the keeper, and you can override at any time.</p>
-        <p class="step-privacy-note">All grouping and scoring runs locally &mdash; no image data is ever sent anywhere.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Delete and free up space</h3>
-        <p>Select the duplicates you want to remove and delete them in one tap. Photos keeps deleted items in Recently Deleted for 30 days, just in case.</p>
-        <p class="step-privacy-note">Deletions go through Apple Photos. We never have direct access to your files.</p>
+        <div class="step-text">
+          <div class="step-num">03</div>
+          <h3>Delete and free up space</h3>
+          <p>Select the duplicates you want to remove and delete them in one tap. Photos keeps deleted items in Recently Deleted for 30 days, just in case.</p>
+          <p class="step-privacy-note" style="margin-top:14px;font-size:12px;color:var(--blue);opacity:0.8;">Deletions go through Apple Photos. We never have direct access to your files.</p>
+        </div>
+        <div class="step-screenshot">
+          <img src="images/screenshot-review2.png" alt="Storage Trimmer — selecting photos for deletion" />
+        </div>
       </div>
     </div>
   </div>
