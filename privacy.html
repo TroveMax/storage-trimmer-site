@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Storage Trimmer</title>
+  <meta name="description" content="Privacy policy for Storage Trimmer. All processing happens entirely on your device. No data collection, no network requests." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #3A8EE6;
+      --blue-dark:  #1A5FB4;
+      --blue-light: #EBF4FF;
+      --blue-mid:   #C5DFF8;
+      --text:       #111827;
+      --muted:      #6B7280;
+      --border:     #E5E7EB;
+      --white:      #FFFFFF;
+      --radius:     16px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    .nav-brand img {
+      width: 28px;
+      height: 28px;
+      object-fit: cover;
+      border-radius: 7px;
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
+
+    /* ── POLICY ── */
+    .policy-header {
+      background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 100%);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+
+    .policy-header h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .policy-header .updated {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .policy-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .policy-body h2 {
+      font-size: 18px;
+      font-weight: 650;
+      color: var(--blue-dark);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    .policy-body h2:first-child { margin-top: 0; }
+
+    .policy-body p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .policy-body ul {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+
+    .policy-body ul li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .policy-body a {
+      color: var(--blue);
+    }
+    .policy-body a:hover { text-decoration: underline; }
+
+    .policy-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    footer a { color: var(--blue); }
+    footer a:hover { text-decoration: underline; }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 16px; }
+      .policy-header { padding: 48px 16px 36px; }
+      .policy-body { padding: 36px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="images/icon.png" alt="Storage Trimmer icon" />
+    Storage Trimmer
+  </a>
+  <a href="index.html#download" class="nav-cta">Download Free</a>
+</nav>
+
+<!-- HEADER -->
+<div class="policy-header">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 25 March 2026</p>
+</div>
+
+<!-- POLICY CONTENT -->
+<main class="policy-body">
+
+  <h2>Overview</h2>
+  <p>Storage Trimmer helps you find and remove duplicate and similar photos and videos from your Mac Photos library. All processing happens entirely on your device. The app does not collect, transmit, or share any of your data.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>What the App Accesses</h2>
+  <p>Storage Trimmer requests read and write access to your Photos library in order to:</p>
+  <ul>
+    <li>Scan photos and videos to identify duplicates and similar content</li>
+    <li>Display thumbnails and previews within the app</li>
+    <li>Delete assets you choose to remove</li>
+  </ul>
+  <p>The following photo metadata is read during scanning:</p>
+  <ul>
+    <li>File size, resolution, and creation/modification date</li>
+    <li>Whether a photo is marked as a Favourite, was edited, or was selected from a burst sequence</li>
+    <li>Media type (photo or video) and video duration</li>
+  </ul>
+  <p>The following is never accessed:</p>
+  <ul>
+    <li>Location or GPS data embedded in photos</li>
+    <li>Face or person recognition data</li>
+    <li>iCloud or sharing status</li>
+    <li>Any content outside your Photos library</li>
+  </ul>
+  <p>No one other than yourself will ever be able to access your content. Storage Trimmer has no way of seeing or retrieving any of your data. It all lives locally on your computer.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>On-Device Processing</h2>
+  <p>All duplicate detection is performed locally using Apple's Vision framework and perceptual hashing. Thumbnail images and feature vectors generated during analysis are processed entirely on your Mac and are never uploaded or transmitted anywhere.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>What Is Stored Locally</h2>
+  <p>To improve performance across sessions, the app stores two small cache files in your Mac's Application Support folder:</p>
+  <ul>
+    <li><strong>Asset size cache</strong> — file sizes for scanned assets, used to avoid repeated lookups</li>
+    <li><strong>Perceptual hash cache</strong> — 64-bit image fingerprints used to speed up duplicate detection</li>
+  </ul>
+  <p>Both files reference assets by their Photos library identifier only. They contain no image data, no personal information, and can be safely deleted at any time.</p>
+  <p>The app also stores your library's total photo count and size in macOS system preferences (UserDefaults) as a display cache.</p>
+  <p>Scan results and your in-app selections are held in memory only and are not saved when you quit the app.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Deletion</h2>
+  <p>When you choose to delete photos or videos, the app uses Apple's standard Photos API (<code>PHAssetChangeRequest</code>) to remove them. Deleted assets are handled by macOS Photos in the same way as if you had deleted them directly in the Photos app.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Limitation of Liability</h2>
+  <p>Storage Trimmer is provided "as is", without warranty of any kind. While the app is designed to help you identify duplicate and similar content, you are solely responsible for reviewing and confirming any selections before deletion.</p>
+  <p>Deleted photos and videos are removed from your Photos library using Apple's standard deletion API. Depending on your macOS version and Photos settings, deleted items may be recoverable from the Recently Deleted album within Photos for a limited period. However, once permanently removed, deleted content cannot be recovered by Storage Trimmer or its developer.</p>
+  <p>The developer of Storage Trimmer accepts no liability for any loss of photos, videos, or other data resulting from use of the app. It is your responsibility to maintain appropriate backups of any content you wish to preserve before using the app's deletion features. Use of Storage Trimmer constitutes your acceptance of these terms.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Network Access</h2>
+  <p>Storage Trimmer makes no network requests of any kind. There is no account system, no cloud sync, no analytics, and no crash reporting. The app functions entirely offline.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Third-Party SDKs</h2>
+  <p>The app uses only Apple's first-party frameworks (Photos, Vision, AVFoundation, SwiftUI, etc.). No third-party libraries, SDKs, or services are included.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Children's Privacy</h2>
+  <p>The app does not collect any personal information from anyone, including children.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Changes to This Policy</h2>
+  <p>If the app's data practices change in a future version, this policy will be updated and the "last updated" date revised.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy, contact: <a href="mailto:storagetrimmer@gmail.com">storagetrimmer@gmail.com</a></p>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:storagetrimmer@gmail.com">Contact</a>
+  </div>
+  <div>© 2026 Storage Trimmer. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
