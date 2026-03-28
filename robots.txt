@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://storagetrimmer.com/sitemap.xml
+Sitemap: https://www.storagetrimmer.com/sitemap.xml
