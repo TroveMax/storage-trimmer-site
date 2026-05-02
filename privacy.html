@@ -182,25 +182,25 @@
 <!-- HEADER -->
 <div class="policy-header">
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 25 March 2026</p>
+  <p class="updated">Last updated: 2 May 2026</p>
 </div>
 
 <!-- POLICY CONTENT -->
 <main class="policy-body">
 
   <h2>Overview</h2>
-  <p>Storage Trimmer helps you find and remove duplicate and similar photos and videos from your Mac Photos library. All processing happens entirely on your device. The app does not collect, transmit, or share any of your data.</p>
+  <p>Storage Trimmer helps you find and remove duplicate and similar photos and videos from your Apple Photos library or other folders on your Mac. All processing happens entirely on your device. The app does not collect, transmit, or share any of your data.</p>
 
   <hr class="policy-divider" />
 
   <h2>What the App Accesses</h2>
-  <p>Storage Trimmer requests read and write access to your Photos library in order to:</p>
+  <p>Storage Trimmer requests read and write access to your selected library or folders in order to:</p>
   <ul>
     <li>Scan photos and videos to identify duplicates and similar content</li>
     <li>Display thumbnails and previews within the app</li>
     <li>Delete assets you choose to remove</li>
   </ul>
-  <p>The following photo metadata is read during scanning:</p>
+  <p>The following metadata is read during scanning:</p>
   <ul>
     <li>File size, resolution, and creation/modification date</li>
     <li>Whether a photo is marked as a Favourite, was edited, or was selected from a burst sequence</li>
@@ -208,12 +208,27 @@
   </ul>
   <p>The following is never accessed:</p>
   <ul>
-    <li>Location or GPS data embedded in photos</li>
+    <li>Location or GPS data embedded in photos or videos</li>
     <li>Face or person recognition data</li>
     <li>iCloud or sharing status</li>
-    <li>Any content outside your Photos library</li>
   </ul>
   <p>No one other than yourself will ever be able to access your content. Storage Trimmer has no way of seeing or retrieving any of your data. It all lives locally on your computer.</p>
+
+  <hr class="policy-divider" />
+
+  <h2>Local File Scanning</h2>
+  <p>In addition to your Apple Photos library, Storage Trimmer can scan folders on your Mac's file system to find photos and videos stored outside of Photos — for example, in your Downloads folder, on an external drive, or anywhere else on your computer.</p>
+  <p>When you use this feature, the app accesses only the folders you explicitly select. For each file found, the app reads:</p>
+  <ul>
+    <li>File name, size, and creation/modification date</li>
+    <li>Image or video content, solely to generate a perceptual fingerprint for duplicate detection</li>
+  </ul>
+  <p>The following is never accessed during local file scanning:</p>
+  <ul>
+    <li>Location or GPS data embedded in photos or videos</li>
+    <li>Any folders or files outside those you select</li>
+  </ul>
+  <p>All processing is performed entirely on your device. No file paths, content, or fingerprints are transmitted anywhere. Scan results are held in memory only and discarded when you quit the app or start a new scan.</p>
 
   <hr class="policy-divider" />
 
@@ -226,22 +241,22 @@
   <p>To improve performance across sessions, the app stores two small cache files in your Mac's Application Support folder:</p>
   <ul>
     <li><strong>Asset size cache</strong> — file sizes for scanned assets, used to avoid repeated lookups</li>
-    <li><strong>Perceptual hash cache</strong> — 64-bit image fingerprints used to speed up duplicate detection</li>
+    <li><strong>Perceptual hash cache</strong> — 64-bit image and video fingerprints used to speed up duplicate detection</li>
   </ul>
-  <p>Both files reference assets by their Photos library identifier only. They contain no image data, no personal information, and can be safely deleted at any time.</p>
+  <p>Both files reference assets by identifier only — Photos library assets by their Photos library ID, and locally scanned files by their file path. They contain no image data, no personal information, and can be safely deleted at any time.</p>
   <p>The app also stores your library's total photo count and size in macOS system preferences (UserDefaults) as a display cache.</p>
   <p>Scan results and your in-app selections are held in memory only and are not saved when you quit the app.</p>
 
   <hr class="policy-divider" />
 
   <h2>Deletion</h2>
-  <p>When you choose to delete photos or videos, the app uses Apple's standard Photos API (<code>PHAssetChangeRequest</code>) to remove them. Deleted assets are handled by macOS Photos in the same way as if you had deleted them directly in the Photos app.</p>
+  <p>When you choose to delete photos or videos from your Apple Photos library, the app uses Apple's standard Photos API (<code>PHAssetChangeRequest</code>) to remove them. Deleted assets are handled by macOS Photos in the same way as if you had deleted them directly in the Photos app. When you delete files found through local folder scanning, they are moved to the macOS Trash using the standard system API.</p>
 
   <hr class="policy-divider" />
 
   <h2>Limitation of Liability</h2>
   <p>Storage Trimmer is provided "as is", without warranty of any kind. While the app is designed to help you identify duplicate and similar content, you are solely responsible for reviewing and confirming any selections before deletion.</p>
-  <p>Deleted photos and videos are removed from your Photos library using Apple's standard deletion API. Depending on your macOS version and Photos settings, deleted items may be recoverable from the Recently Deleted album within Photos for a limited period. However, once permanently removed, deleted content cannot be recovered by Storage Trimmer or its developer.</p>
+  <p>Photos and videos deleted from your Apple Photos library are removed using Apple's standard deletion API. Depending on your macOS version and Photos settings, deleted items may be recoverable from the Recently Deleted album within Photos for a limited period. Files deleted from local folders are moved to the macOS Trash and may be recoverable from there until the Trash is emptied. However, once permanently removed, deleted content cannot be recovered by Storage Trimmer or its developer.</p>
   <p>The developer of Storage Trimmer accepts no liability for any loss of photos, videos, or other data resulting from use of the app. It is your responsibility to maintain appropriate backups of any content you wish to preserve before using the app's deletion features. Use of Storage Trimmer constitutes your acceptance of these terms.</p>
 
   <hr class="policy-divider" />
